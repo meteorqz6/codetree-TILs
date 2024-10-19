@@ -6,7 +6,7 @@ let sumVal = 0;
 
 while (true) {
     n = Number(input[index]);
-    if(n>=30){
+    if(n>=30 || n<20){
         break;
     }
     sumVal += n;
