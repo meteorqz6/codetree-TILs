@@ -7,7 +7,7 @@ let satisfied = 'YES';
 
 for(let i = a; i <= b; i++){
     if(i%c===0){
-        satisfied = 'No';
+        satisfied = 'NO';
     }
 }
 
