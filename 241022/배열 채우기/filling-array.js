@@ -3,7 +3,7 @@ let arr = fs.readFileSync(0).toString().trim().split(' ').map(Number);
 let exist = 0;
 
 for(let num of arr) {
-    if(num === 0){
+    if(num == 0){
         exist = 1;
         break;
     }
