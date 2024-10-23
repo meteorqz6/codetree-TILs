@@ -6,10 +6,8 @@ let cnt = 0;
 
 for(let i = 1; i <=n ; i++){
     sumLen += input[i].length;
-    for(let j = 0; j < input[i].length; j++){
-        if(input[i][j] === 'a'){
-            cnt++;
-        }
+    if(input[i][0] === 'a'){
+        cnt++;
     }
 }
 
