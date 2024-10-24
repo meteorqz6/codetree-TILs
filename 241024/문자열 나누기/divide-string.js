@@ -7,12 +7,12 @@ for(let i = 0; i < n; i++){
     str += arr[i];
 }
 const len = str.length;
-
-for(let i = 0; i < len; i+=5){
-    let result = "";
-    for(let j = i; j < i+5; j++){
-        if(j>len-1) break;
-        result += str[j];
+let result = "";
+for(let i = 0; i < len; i++){
+    result += str[i];
+    if((i+1)%5===0){
+        console.log(result);
+        result = "";
     }
-    console.log(result);
 }
+console.log(result);
