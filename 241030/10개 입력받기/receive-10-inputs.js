@@ -15,4 +15,4 @@ for(let i = 0; i < 10; i++){
 for(let i = 0; i < idx; i++){
     sum += arr[i];
 }
-console.log(sum, (sum/4).toFixed(1));
+console.log(sum, (sum/idx).toFixed(1));
