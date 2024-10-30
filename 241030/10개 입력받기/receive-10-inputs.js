@@ -9,6 +9,8 @@ for(let i = 0; i < 10; i++){
     if(arr[i] === 0){
         idx = i;
         break;
+    } else{
+        idx = 10;
     }
 }
 
