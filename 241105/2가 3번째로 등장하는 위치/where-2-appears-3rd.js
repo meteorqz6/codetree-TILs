@@ -6,12 +6,14 @@ let cnt = 0;
 let idx;
 
 for(let i = 0; i < n; i++) {
-    if(arr[i] === 2) {
-        cnt++;
-    }
 
     if(cnt === 3) {
         idx = i;
+        break;
+    }
+
+    if(arr[i] === 2) {
+        cnt++;
     }
 }
 
