@@ -12,15 +12,16 @@ for(let i = 0; i < cnt; i++) {
     
     let partArr = arrA.slice(i, i + n2);
     
-    if(cnt2 === n2) {
-        result = 'Yes';
-        break;
-    }
     cnt2 = 0;
     for(let i = 0; i < n2; i++) {
         if(partArr[i] === arrB[i]) {
             cnt2++;
         }
+    }
+
+    if(cnt2 === n2) {
+        result = 'Yes';
+        break;
     }
 }
 
