@@ -1,5 +1,5 @@
 const fs = require('fs');
-const input = fs.readFileSync(0).toString().trim().map(Number);
+const input = fs.readFileSync(0).toString().trim().split(' ').map(Number);
 let limitUnder500 = [];
 let limitUpper500 = [];
 
