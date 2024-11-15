@@ -7,7 +7,6 @@ let max = Number.MIN_SAFE_INTEGER;
 for (let i = 0; i < arr.length; i++) {
     if (arr[i] > max) {
         max = arr[i];
-        console.log(max);
     } else if (arr[i] === max) {
         max = arr[i - 1];
     }
