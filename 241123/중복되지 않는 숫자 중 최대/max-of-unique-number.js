@@ -9,5 +9,8 @@ for (let i = 1; i < n; i++) {
         result.push(arr[i]);
     }
 }
-
-console.log(Math.max(...result));
+if (result === []) {
+    console.log(-1);
+} else {
+    console.log(Math.max(...result));
+}
