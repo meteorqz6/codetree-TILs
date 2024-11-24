@@ -4,10 +4,10 @@ let strA = input[0];
 let lenA = strA.length;
 const strB = input[1];
 const lenB = strB.length;
-let flag = 1;
 
 while (lenA > lenB) {
     // console.log(lenA);
+    let flag = 1;
     for (let i = 0; i < lenA - lenB + 1; i++) {
         let str = strA.slice(i, i + lenB);
 
@@ -20,6 +20,7 @@ while (lenA > lenB) {
             break;
         }
     }
+    // console.log(strA);
     if(flag === 1) break;
 }
 
