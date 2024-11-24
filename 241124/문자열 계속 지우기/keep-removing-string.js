@@ -20,4 +20,9 @@ while (lenA > lenB) {
     }
 }
 
-console.log(strA);
+if(strA === strB){
+    console.log();
+} else {
+    console.log(strA);
+}
+
