@@ -1,32 +1,12 @@
 const fs = require('fs');
 const input = fs.readFileSync(0).toString().trim().split('\n');
-let strA = input[0];
-let lenA = strA.length;
-const strB = input[1];
+let [strA, strB] = input;
 const lenB = strB.length;
 
-while (lenA > lenB) {
-    // console.log(lenA);
-    let flag = 1;
-    for (let i = 0; i < lenA - lenB + 1; i++) {
-        let str = strA.slice(i, i + lenB);
-
-        if (str === strB) {
-            let start = i;
-            let end = i + lenB;
-            strA = strA.slice(0, start) + strA.slice(end);
-            lenA = strA.length;
-            flag = 0;
-            break;
-        }
-    }
-    // console.log(strA);
-    if(flag === 1) break;
+while (strA.length > lenB) {
+    const idx = strA.indexOf(strB); // strB가 strA에 존재하는 첫 위치 찾기
+    if (idx === -1) break;         // strB가 더 이상 존재하지 않으면 종료
+    strA = strA.slice(0, idx) + strA.slice(idx + lenB); // strB 제거
 }
 
-if(strA === strB){
-    console.log();
-} else {
-    console.log(strA);
-}
-
+console.log(strA === strB ? '' : strA);
