@@ -4,6 +4,7 @@ let strA = input[0];
 let lenA = strA.length;
 const strB = input[1];
 const lenB = strB.length;
+let flag = 1;
 
 while (lenA > lenB) {
     // console.log(lenA);
@@ -15,9 +16,11 @@ while (lenA > lenB) {
             let end = i + lenB;
             strA = strA.slice(0, start) + strA.slice(end);
             lenA = strA.length;
+            flag = 0;
             break;
         }
     }
+    if(flag === 1) break;
 }
 
 if(strA === strB){
