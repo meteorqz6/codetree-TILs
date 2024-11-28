@@ -9,4 +9,4 @@ function add(n) {
 const fs = require('fs');
 const n = Number(fs.readFileSync(0).toString().trim());
 let sumVal = add(n);
-console.log(sumVal / 10);
+console.log(parseInt(sumVal / 10));
