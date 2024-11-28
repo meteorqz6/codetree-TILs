@@ -13,11 +13,7 @@ let a;
 let b;
 if (input.length === 1) {
     a = input[0];
-    if (isPrime(a)) { console.log(a); }
-    else {
-        console.log(0);
-    }
-
+    console.log(0);
 } else {
     a = input[0];
     b = input[1];
