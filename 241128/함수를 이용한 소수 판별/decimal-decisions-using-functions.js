@@ -1,4 +1,7 @@
 function isPrime(n) {
+    if (n === 1) {
+        return false;
+    }
     for (let i = 2; i < n; i++) {
         if (n % i === 0) {
             return false;
@@ -8,22 +11,14 @@ function isPrime(n) {
 }
 
 const fs = require('fs');
-let input = fs.readFileSync(0).toString().trim().split(' ').map(Number);
-let a;
-let b;
-if (input.length === 1) {
-    a = input[0];
-    console.log(0);
-} else {
-    a = input[0];
-    b = input[1];
+let input = fs.readFileSync(0).toString().trim().split(' ');
+let [a, b] = input.map(Number);
 
-    let sum = 0;
-    for (let i = a; i <= b; i++) {
-        if (isPrime(i)) {
-            sum += i;
-        }
+let sum = 0;
+for (let i = a; i <= b; i++) {
+    if (isPrime(i)) {
+        sum += i;
     }
-
-    console.log(sum);
 }
+
+console.log(sum);
