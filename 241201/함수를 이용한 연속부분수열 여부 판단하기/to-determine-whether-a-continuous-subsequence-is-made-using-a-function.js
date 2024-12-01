@@ -1,15 +1,19 @@
 function partstr(a, b) {
     let isPartStr = true;
+
+    if (a.length < b.length) return false;
+
     for (let i = 0; i < a.length - b.length; i++) {
-        isPartStr = true;
-        for (let j = 0; j < b.length; j++) {
-            if (b[j] !== a[i + j]) {
-                isPartStr = false;
-                break;
+            isPartStr = true;
+            for (let j = 0; j < b.length; j++) {
+                if (b[j] !== a[i + j]) {
+                    isPartStr = false;
+                    break;
+                }
             }
+            if (isPartStr) return isPartStr;
         }
-        if (isPartStr) return isPartStr;
-    }
+
     return isPartStr;
 }
 
