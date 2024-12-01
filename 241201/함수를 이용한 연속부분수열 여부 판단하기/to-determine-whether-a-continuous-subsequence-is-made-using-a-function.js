@@ -1,13 +1,23 @@
 function partstr(a, b) {
-    if (a.includes(b)) {
-        console.log('Yes');
-    } else {
-        console.log('No');
+    let isPartStr;
+    for (let i = 0; i < a.length - b.length; i++) {
+        isPartStr = true;
+        for (let j = 0; j < b.length; j++) {
+            if (b[j] !== a[i + j]) {
+                isPartStr = false;
+                break;
+            }
+        }
+        if (isPartStr) return isPartStr;
     }
+    return isPartStr;
 }
 
 const fs = require('fs');
 let input = fs.readFileSync(0).toString().trim().split('\n');
-let a = input[1].split(' ').join('');
-let b = input[2].split(' ').join('');
-partstr(a, b);
+let a = input[1].split(' ').map(Number);
+let b = input[2].split(' ').map(Number);
+let result = partstr(a, b);
+
+if (result) console.log('Yes');
+else console.log('No');
