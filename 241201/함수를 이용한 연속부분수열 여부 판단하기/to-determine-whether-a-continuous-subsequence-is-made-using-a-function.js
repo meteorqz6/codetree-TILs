@@ -1,5 +1,5 @@
 function partstr(a, b) {
-    let isPartStr;
+    let isPartStr = true;
     for (let i = 0; i < a.length - b.length; i++) {
         isPartStr = true;
         for (let j = 0; j < b.length; j++) {
