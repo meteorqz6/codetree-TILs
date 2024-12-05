@@ -9,7 +9,7 @@ function f(n) {
         return 4;
     }
 
-    return f(n - 1) * f(n - 2);
+    return f(n - 1) * f(n - 2) % 100;
 }
 
-console.log(f(n) % 100);
+console.log(f(n));
