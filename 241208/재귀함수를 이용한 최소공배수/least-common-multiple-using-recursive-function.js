@@ -12,10 +12,20 @@ function lcm(a, b) {
     return (a * b) / gcd(a, b);
 }
 
-function findLCMArray(arr, idx) {
-    if (idx === 1) return lcm(arr[0], arr[1]);
-    return lcm(findLCMArray(arr, idx - 1), arr[idx]);
+function findLCMArray(arr) {
+    if (arr.length === 1) {
+        return arr[0];
+    }
+
+    if (arr.length === 2) {
+        return lcm(arr[0], arr[1])
+    } else {
+        const a = arr[0];
+        arr.shift();
+        const b = findLCMArray(arr);
+        return lcm(a, b);
+    }
 }
 
-const result = findLCMArray(arr, n - 1);
+const result = findLCMArray(arr);
 console.log(result);
