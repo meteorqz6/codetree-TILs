@@ -1,31 +1,29 @@
 const fs = require('fs');
-const input = fs.readFileSync(0).toString().trim().split('\n');
-const n = Number(input[0]);
-const arr = input[1].split(' ').map(Number);
+let input = fs.readFileSync(0).toString().trim().split('\n');
+let n = Number(input[0]);
+let x = input[1].split(' ').map(Number);
+let arr = Array(n + 1);
+arr[0] = 0;
 
-function gcd(a, b) {
-    if (b === 0) return a;
-    return gcd(b, a % b);
+for (let i = 1; i < n + 1; i++) {
+    arr[i] = x[i - 1];
 }
 
 function lcm(a, b) {
-    return (a * b) / gcd(a, b);
+    let gcd = 1;
+    for (let i = 1; i < Math.min(a, b) + 1; i++) {
+        if (a % i === 0 && b % i === 0) {
+            gcd = i;
+        }
+    }
+    return parseInt(a * b / gcd);
 }
 
-function findLCMArray(arr) {
-    if (arr.length === 1) {
-        return arr[0];
+function getLcmAll(index) {
+    if (index === 1) {
+        return arr[1];
     }
-
-    if (arr.length === 2) {
-        return lcm(arr[0], arr[1])
-    } else {
-        const a = arr[0];
-        arr.shift();
-        const b = findLCMArray(arr);
-        return lcm(a, b);
-    }
+    return lcm(getLcmAll(index - 1), arr[index]);
 }
 
-const result = findLCMArray(arr);
-console.log(result);
+console.log(getLcmAll(n));
