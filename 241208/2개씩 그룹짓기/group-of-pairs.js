@@ -3,20 +3,19 @@ const input = fs.readFileSync(0).toString().trim().split('\n');
 const n = Number(input[0]);
 const arr = input[1].split(' ').map(Number).sort((a, b) => a - b);
 
-let arr1 = [];
-let sumArr1 = 0;
-let arr2 = [];
-let sumArr2 = 0;
+let maxSum = 0;
+let left = 0;
+let right = n * 2 - 1;
 
-for (let i = 0; i < n * 2; i++) {
-    if (i % 2 === 0) {
-        arr1.push(arr[i]);
-        sumArr1 += arr[i];
-    } else {
-        arr2.push(arr[i]);
-        sumArr2 += arr[i];
+// console.log(arr);
+while (left < right) {
+    let newMaxSum = arr[left] + arr[right];
+    if (maxSum < newMaxSum) {
+        maxSum = newMaxSum;
     }
+    // console.log(maxSum);
+    left++;
+    right--;
 }
 
-console.log(Math.max(sumArr1, sumArr2));
-
+console.log(maxSum);
