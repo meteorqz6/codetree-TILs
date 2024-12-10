@@ -8,10 +8,10 @@ class Student {
 }
 
 function cmp(a, b) {
-    if (a.eng === b.eng) {
-        return b.math - a.math;
-    }
     if (a.kor === b.kor) {
+        if (a.eng === b.eng) {
+            return b.math - a.math;
+        }
         return b.eng - a.eng;
     }
 
