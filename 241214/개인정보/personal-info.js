@@ -24,7 +24,7 @@ users.sort((a, b) => {
 
 console.log('name');
 for (let i = 0; i < 5; i++) {
-    console.log(users[i].name, users[i].height, users[i].weight);
+    console.log(users[i].name, users[i].height, users[i].weight.toFixed(1));
 }
 
 users.sort((a, b) => {
@@ -34,5 +34,5 @@ users.sort((a, b) => {
 console.log();
 console.log('height');
 for (let i = 0; i < 5; i++) {
-    console.log(users[i].name, users[i].height, users[i].weight);
+    console.log(users[i].name, users[i].height, users[i].weight.toFixed(1));
 }
