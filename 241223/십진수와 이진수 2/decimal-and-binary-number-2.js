@@ -1,5 +1,5 @@
 const fs = require('fs');
-const binary = fs.readFileSync(0).toString().split('').map(Number);
+const binary = fs.readFileSync(0).toString().trim().split('').map(Number);
 let result = 0;
 for (let i = 0; i < binary.length; i++) {
     result = result * 2 + binary[i];
