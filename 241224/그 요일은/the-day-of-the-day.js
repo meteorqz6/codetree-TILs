@@ -28,11 +28,11 @@ for (let i = 0; i < 7; i++) {
 }
 
 while (true) {
-    cnt++;
-    start += 7;
     if (start > diff) {
         break;
     }
+    cnt++;
+    start += 7;
 }
 
 console.log(cnt);
