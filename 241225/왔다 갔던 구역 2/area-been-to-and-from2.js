@@ -5,6 +5,7 @@ let arr = Array(2001).fill(0);
 let start = 1000;
 
 for (let i = 1; i <= n; i++) {
+    // console.log(start);
     let distance = Number(input[i].split(' ')[0]);
     let direction = input[i].split(' ')[1];
 
@@ -14,7 +15,7 @@ for (let i = 1; i <= n; i++) {
         }
         start = start + distance;
     } else {
-        for (let i = start; i > start - distance; i--) {
+        for (let i = start - 1; i >= start - distance; i--) {
             arr[i] += 1;
         }
         start = start - distance;
