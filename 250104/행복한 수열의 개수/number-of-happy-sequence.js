@@ -12,32 +12,42 @@ for (let i = 1; i <= n; i++) {
 let cnt = 1;
 
 for (let i = 0; i < n; i++) {
-    if (cnt >= m) {
-        countArr++;
-    }
+    // console.log(countArr);
+    // if (cnt >= m) {
+    //     countArr++;
+    // }
     cnt = 1;
-    for (let j = 0; j < n - 1; j++) {
-        if (arr2d[i][j] === arr2d[i][j + 1]) {
+    for (let j = 1; j < n; j++) {
+        let prev = arr2d[i][j - 1];
+        if (arr2d[i][j] === prev) {
             cnt++;
         } else {
             cnt = 1;
         }
     }
+    if (cnt >= m) {
+        countArr++;
+    }
 }
+
 
 cnt = 1;
 
 for (let i = 0; i < n; i++) {
-    if (cnt >= m) {
-        countArr++;
-    }
+    // if (cnt >= m) {
+    //     countArr++;
+    // }
     cnt = 1;
-    for (let j = 0; j < n - 1; j++) {
-        if (arr2d[j][i] === arr2d[j + 1][i]) {
+    for (let j = 1; j < n; j++) {
+        let prev = arr2d[j - 1][i];
+        if (arr2d[j][i] === prev) {
             cnt++;
         } else {
             cnt = 1;
         }
+    }
+    if (cnt >= m) {
+        countArr++;
     }
 }
 
