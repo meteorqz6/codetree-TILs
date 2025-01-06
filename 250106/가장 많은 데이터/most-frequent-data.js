@@ -15,6 +15,9 @@ for (let i = 1; i <= n; i++) {
         }
     } else {
         freq.set(string, 1);
+        if (max < freq.get(string)) {
+            max = freq.get(string);
+        }
     }
 }
 
